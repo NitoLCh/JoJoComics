@@ -1,7 +1,6 @@
 :root{
     --primario:  #393E46;
     --secundario: #00ADB5;
-    --secundarioClaro: #AAD8D3;
     --blanco: #EEEEEE;
     
     --fuentePrincipal: 'Poppins', sans-serif;
@@ -92,7 +91,7 @@ h3{
 
 .navegacion__enlace--activo, 
 .navegacion__enlace:hover{
-    color: var(--secundarioClaro);
+    color: var(--primario);
 }
 
 /**FOOTER**/
