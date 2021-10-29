@@ -2,7 +2,6 @@
     --primario:  #393E46;
     --secundario: #00ADB5;
     --blanco: #EEEEEE;
-    
     --fuentePrincipal: 'Poppins', sans-serif;
 }
 
@@ -92,6 +91,62 @@ h3{
 .navegacion__enlace--activo, 
 .navegacion__enlace:hover{
     color: var(--primario);
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/**GRID**/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+
+/**MUESTRA**/
+.muestra{
+    width: 30rem;
+    grid-template-rows: 17.5rem 17.5rem 8rem;
+    border-radius: 1.8rem;
+    background-color: #EEEEEE;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(146, 244, 249, 0.5);
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+}
+
+.muestra__portada{
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    background-size: cover;
+}
+
+.muestra__titulo{
+    color: var(--primario);
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+
+.muestra__sinopsis{
+    color: var(--secundario);
+    font-size: 2.25rem;
+}
+
+.muestra__piedetarjeta{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    background: rgb(0, 135, 145);
+}
+.muestra__cuadro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--primario);
+    padding: 10px;
 }
 
 /**FOOTER**/
