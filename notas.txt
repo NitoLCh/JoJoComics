@@ -3,6 +3,7 @@ Blanco: #F4F5F6
 Negro:  #0A0A0A
 
 --OPCIONAL
-Blanco: #EEEEEE
-Negro:  #393E46
+Fondo_Blanco: #EEEEEE
+Secundario: #AAD8D3
+Primario:  #393E46
 Azul:   #00ADB5
