@@ -1,0 +1,8 @@
+Rojo:   #E30004
+Blanco: #F4F5F6
+Negro:  #0A0A0A
+
+--OPCIONAL
+Blanco: #EEEEEE
+Negro:  #393E46
+Azul:   #00ADB5
