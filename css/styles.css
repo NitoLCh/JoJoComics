@@ -1,9 +1,109 @@
 :root{
     --primario:  #393E46;
     --secundario: #00ADB5;
-    --secundario-claro: #AAD8D3;
+    --secundarioClaro: #AAD8D3;
+    --blanco: #EEEEEE;
+    
+    --fuentePrincipal: 'Poppins', sans-serif;
 }
 
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+/*GLOBALES*/
 body{
     background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.4rem
+}
+
+/**HEADER**/
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{
+    margin: 3rem 0;
+}
+
+/**BARRA DE NAVEGACION**/
+.navegacion{
+    background-color: var(--secundario);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 4rem; 
+}
+
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+
+.navegacion__enlace:last-of-type{ /*Selecciona el ultimo elemento*/
+    margin-right: 0;
+}
+
+.navegacion__enlace--activo, 
+.navegacion__enlace:hover{
+    color: var(--secundarioClaro);
+}
+
+/**FOOTER**/
+.footer{
+    background-color: var(--secundario);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
 }
