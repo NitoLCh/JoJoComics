@@ -1,3 +1,6 @@
+USE jojo_comics;
+
+--@block
 CREATE TABLE cliente (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
@@ -16,7 +19,9 @@ CREATE TABLE pedido(
     id_cliente INT NOT NULL,
     estado VARCHAR(255) NOT NULL,
     fecha_orden DATE NOT NULL,
-    fecha_entrega DATE
+    fecha_entrega DATE,
     FOREIGN KEY(id_cliente) REFERENCES cliente(id)
 );
+
+--@block
 
