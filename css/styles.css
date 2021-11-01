@@ -23,6 +23,7 @@ body{
 
 p{
     font-size: 1.8rem;
+    font-weight: 300;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--blanco);
 }
@@ -104,9 +105,13 @@ h3{
     grid-template-columns: repeat(2,1fr);
     gap: 2rem;
 }
-
-/**MUESTRA**/
-.muestra{
+@media (min-width: 76.8rem){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/**PRODUCTO
+.producto{
     width: 30rem;
     grid-template-rows: 17.5rem 17.5rem 8rem;
     border-radius: 1.8rem;
@@ -116,37 +121,60 @@ h3{
     font-family: var(--fuentePrincipal);
 }
 
-.muestra__portada{
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
+.producto__portada{
+    border-radius: 1.5rem;
     background-size: cover;
 }
 
-.muestra__titulo{
+.producto__titulo{
     color: var(--primario);
     margin-top: 1rem;
     font-size: 3rem;
 }
 
-.muestra__sinopsis{
-    color: var(--secundario);
-    font-size: 2.25rem;
-}
-
-.muestra__piedetarjeta{
+.producto_informacion{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
     background: rgb(0, 135, 145);
 }
-.muestra__cuadro{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
+**/
+
+.producto{
+    background-color: var(--blanco);
+    border-radius: 1.8rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(146, 244, 249, 0.5);
+}
+
+.producto:hover{
+    transition: 0.5s ease;
+    cursor: pointer;
+    scale: 1.10;
+    transition-duration: 0.6s;
+}
+.producto__portada{
+    height: 50rem;
+    border-radius: 1.5rem;
+}
+
+.producto__titulo{
+    font-size: 4rem;
+    font-weight: 600;
     color: var(--primario);
-    padding: 10px;
+}
+
+.producto__precio, .producto__info{
+    font-size: 2.8rem;
+    color: var(--primario);
+}
+
+.producto__titulo, 
+.producto__precio, 
+.producto__info{
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
 }
 
 /**FOOTER**/
