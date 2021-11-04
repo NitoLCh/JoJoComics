@@ -1,204 +1,210 @@
-:root{
-    --primario:  #393E46;
-    --secundario: #00ADB5;
-    --blanco: #EEEEEE;
-    --fuentePrincipal: 'Poppins', sans-serif;
+:root {
+  --primario: #393e46;
+  --secundario: #00adb5;
+  --blanco: #eeeeee;
+  --fuentePrincipal: "Poppins", sans-serif;
 }
 
-html{
-    box-sizing: border-box;
-    font-size: 62.5%;
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
-*, *:before, *:after{
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /*GLOBALES*/
-body{
-    background-color: var(--primario);
-    font-size: 1.6rem;
-    line-height: 1.5;
+body {
+  background-color: var(--primario);
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 
-p{
-    font-size: 1.8rem;
-    font-weight: 300;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--blanco);
+p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--blanco);
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-img{
-    width: 100%;
+img {
+  width: 100%;
 }
 
-contenedor{
-    max-width: 120rem;
-    margin: 0 auto;
+contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
-h1, h2, h3{
-    text-align: center;
-    color: var(--secundario);
-    font-family: var(--fuentePrincipal);
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--secundario);
+  font-family: var(--fuentePrincipal);
 }
 
-h1{
-    font-size: 4rem;
-    font-weight: 600;
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
 }
 
-h2{
-    font-size: 3.2rem;
+h2 {
+  font-size: 3.2rem;
 }
 
-h3{
-    font-size: 2.4rem
+h3 {
+  font-size: 2.4rem;
 }
 
 /**HEADER**/
-.header{
-    display: flex;
-    justify-content: center;
+.header {
+  display: flex;
+  justify-content: center;
 }
 
-.header__logo{
-    margin: 3rem 0;
+.header__logo {
+  margin: 3rem 0;
 }
 
 /**BARRA DE NAVEGACION**/
-.navegacion{
-    background-color: var(--secundario);
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 4rem; 
+.navegacion {
+  background-color: var(--secundario);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
 }
 
-.navegacion__enlace{
-    font-family: var(--fuentePrincipal);
-    color: var(--blanco);
-    font-size: 3rem;
+.navegacion__enlace {
+  font-family: var(--fuentePrincipal);
+  color: var(--blanco);
+  font-size: 3rem;
 }
 
-.navegacion__enlace:last-of-type{ /*Selecciona el ultimo elemento*/
-    margin-right: 0;
+.navegacion__enlace:last-of-type {
+  /*Selecciona el ultimo elemento*/
+  margin-right: 0;
 }
 
-.navegacion__enlace--activo, 
-.navegacion__enlace:hover{
-    color: var(--primario);
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+  color: var(--primario);
 }
 
-.contenedor{
-    max-width: 120rem;
-    margin: 0 auto;
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 /**GRID**/
-.grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
-@media (min-width: 76.8rem){
-    .grid{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.producto{
-    background-color: var(--blanco);
-    border-radius: 1.8rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem rgba(146, 244, 249, 0.5);
+@media (min-width: 76.8rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.producto:hover{
-    transition: 0.5s ease;
+.producto {
+  background-color: var(--blanco);
+  border-radius: 1.8rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(146, 244, 249, 0.5);
+}
+
+.producto:hover {
+    transition: ease 0.5s;
     cursor: pointer;
-    scale: 1.10;
-    transition-duration: 0.6s;
+    transform: scale(1.10);
+    transition-duration: 0.6s
 }
-.producto__portada{
-    height: 50rem;
-    border-radius: 1.5rem;
-}
-
-.producto__titulo{
-    font-size: 4rem;
-    font-weight: 600;
-    color: var(--primario);
+.producto__portada {
+  height: 50rem;
+  border-radius: 1.5rem;
 }
 
-.producto__precio, .producto__info{
-    font-size: 2.8rem;
-    color: var(--primario);
+.producto__titulo {
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--primario);
+}
+
+.producto__precio,
+.producto__info {
+  font-size: 2.8rem;
+  color: var(--primario);
 }
 
 /**NOSOTROS**/
-.nosotros{
-    display: grid;
-    grid-template-rows: (2,auto);
+.nosotros {
+  display: grid;
+  grid-template-rows: (2, auto);
 }
 
-@media(min-width: 768px){
-    .nosotros{
-        grid-template-columns: repeat(2,1fr);
-        column-gap: 2rem;
-    }
+@media (min-width: 768px) {
+  .nosotros {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
 }
 
-.nosotros__imagen{
-    grid-row: 1 /2;
+.nosotros__imagen {
+  grid-row: 1 /2;
 }
 
-@media(min-width: 768px){
-    .nosotros__imagen{
-        grid-column: 1 / 2;
-    }
+@media (min-width: 768px) {
+  .nosotros__imagen {
+    grid-column: 1 / 2;
+  }
 }
 
-.bloques{
-    display:grid;
-    gap: 2rem;
-    font-family: var(--fuentePrincipal);
+.bloques {
+  display: grid;
+  gap: 2rem;
+  font-family: var(--fuentePrincipal);
 }
 
-@media(min-width: 768px){
-    .bloques{
-        grid-template-columns: repeat(4,1fr);
-    }
+@media (min-width: 768px) {
+  .bloques {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-.bloque{
-    text-align: center;
-}
-
-.bloque__titulo{
-    margin: 0;
+.bloque {
+  text-align: center;
 }
 
-.producto__titulo, 
-.producto__precio, 
-.producto__info{
-    font-family: var(--fuentePrincipal);
-    margin: 1rem 0;
-    text-align: center;
-    line-height: 1.2;
+.bloque__titulo {
+  margin: 0;
+}
+
+.producto__titulo,
+.producto__precio,
+.producto__info {
+  font-family: var(--fuentePrincipal);
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /**FOOTER**/
-.footer{
-    background-color: var(--secundario);
-    padding: 1rem 0;
-    margin-top: 2rem;
+.footer {
+  background-color: var(--secundario);
+  padding: 1rem 0;
+  margin-top: 2rem;
 }
 
-.footer__texto{
-    text-align: center;
-    font-family: var(--fuentePrincipal);
-    font-size: 2.2rem;
+.footer__texto {
+  text-align: center;
+  font-family: var(--fuentePrincipal);
+  font-size: 2.2rem;
 }
