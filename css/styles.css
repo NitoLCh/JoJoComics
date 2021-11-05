@@ -173,3 +173,48 @@ h3{
     font-family: var(--fuentePrincipal);
     font-size: 2.2rem;
 }
+  
+  /**NOSOTROS**/
+  .nosotros {
+    display: grid;
+    grid-template-rows: (2, auto);
+  }
+  
+  @media (min-width: 768px) {
+    .nosotros {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+    }
+  }
+  
+  .nosotros__imagen {
+    grid-row: 1 /2;
+  }
+  
+  @media (min-width: 768px) {
+    .nosotros__imagen {
+      grid-column: 1 / 2;
+    }
+  }
+
+  /*CONTACTO*/
+  
+  .bloques {
+    font-family: var(--fuentePrincipal);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill);
+  }
+  
+  @media (min-width: 768px) {
+    .bloques {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .bloque {
+    text-align: center;
+  }
+  
+  .bloque__titulo {
+    margin: 0;
+  }
