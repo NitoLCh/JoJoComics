@@ -126,9 +126,16 @@ h3{
 .producto:hover{
     transition: ease 0.5s;
     cursor: pointer;
-    transform: scale(1.10);
-    transition-duration: 0.6s;
+    
 }
+
+@media (min-width: 76.8rem) {
+    .producto:hover{
+        transform: scale(1.10);
+        transition-duration: 0.6s;
+    }
+}
+
 .producto__portada{
     height: 50rem;
     border-radius: 1.5rem;
