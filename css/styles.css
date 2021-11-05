@@ -218,12 +218,3 @@ h3{
   .bloque__titulo {
     margin: 0;
   }
-  
-  .producto__titulo,
-  .producto__precio,
-  .producto__info {
-    font-family: var(--fuentePrincipal);
-    margin: 1rem 0;
-    text-align: center;
-    line-height: 1.2;
-  }
