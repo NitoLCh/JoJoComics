@@ -21,7 +21,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/all_star_superman.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/all_star_superman.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">All-Star Superman</p>
                         <p class="producto__precio">$93</p>
@@ -33,7 +33,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/scottPIlgrim.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/scottPIlgrim.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Scott Pilgrim vs. the World</p>
                         <p class="producto__precio">$73</p>
@@ -45,7 +45,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/dark_knight.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/dark_knight.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Batman: Dark Knight Returns</p>
                         <p class="producto__precio">$32</p>
@@ -57,7 +57,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/blackest_night.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/blackest_night.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Green Lantern: Blackest night</p>
                         <p class="producto__precio">$1635</p>
@@ -69,7 +69,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/civil_war.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/civil_war.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Marvel: Civil war</p>
                         <p class="producto__precio">$3500</p>
@@ -81,7 +81,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/flashpoint.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/flashpoint.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Flash: Flashpoint paradox</p>
                         <p class="producto__precio">$500</p>
@@ -93,7 +93,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/invencible.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/invencible.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Invincible: Compendium</p>
                         <p class="producto__precio">$1336</p>
@@ -105,7 +105,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/kingdom_come.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/kingdom_come.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">DC: Kingdm Come</p>
                         <p class="producto__precio">$1488</p>
@@ -117,7 +117,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/planet_hulk.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/planet_hulk.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Hulk: Planet Hulk</p>
                         <p class="producto__precio">$1500</p>
@@ -129,7 +129,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/spiderman.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/spiderman.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">Spider-man: One more day</p>
                         <p class="producto__precio">$800</p>
@@ -141,7 +141,7 @@
             </div>
             <div class="producto">
                 <a href="#">
-                    <img class="producto__portada" src="img/portadas/age_of_apocalipsis.jpg" alt="imagen comic">
+                    <img class="producto__portada" src="/img/portadas/age_of_apocalipsis.jpg" alt="imagen comic">
                     <div class="producto__informacion">
                         <p class="producto__titulo">X-Men: Age of Apocalipsis</p>
                         <p class="producto__precio">$1696</p>

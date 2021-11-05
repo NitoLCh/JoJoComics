@@ -14,6 +14,10 @@ CREATE TABLE cliente (
 );
 
 --@block
+ALTER TABLE comic
+ADD COLUMN imagen VARCHAR(255),
+ADD COLUMN numPaginas VARCHAR(25);
+--@block
 CREATE TABLE pedido(
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_cliente INT NOT NULL,

@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" 
     rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
     <header class="header">
         <a href="index.php">
-            <img class="header__logo" src="img/Logo_nuevo.png" alt="logotipo">
+            <img class="header__logo" src="/img/Logo_nuevo.png" alt="logotipo">
         </a>
     </header>
 
