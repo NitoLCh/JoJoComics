@@ -196,11 +196,14 @@ h3{
       grid-column: 1 / 2;
     }
   }
+
+  /*CONTACTO*/
   
   .bloques {
+    font-family: var(--fuentePrincipal);
     display: grid;
     gap: 2rem;
-    font-family: var(--fuentePrincipal);
+    grid-template-columns: repeat(auto-fill);
   }
   
   @media (min-width: 768px) {
