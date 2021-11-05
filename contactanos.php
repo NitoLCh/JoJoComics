@@ -1,6 +1,6 @@
 <?php 
-    $activo = 3;
-    include 'includes/templates/header.php'; 
+   require 'includes/funciones.php';
+   incluirTemplate('header', 3);
 ?>
     
     <section class="contenedor">
@@ -32,5 +32,5 @@
     </section>
 
     <?php 
-        include 'includes/templates/footer.php';
+        incluirTemplate('footer');
     ?>

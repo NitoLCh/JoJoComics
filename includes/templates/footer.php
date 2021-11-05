@@ -1,6 +1,8 @@
 <footer class="footer">
-        <p class="footer__texto">JoJoComics. Todos los Derechos Reservados 2021 ©</p>
-    </footer>
+    <p class="footer__texto">
+        JoJoComics. Todos los Derechos Reservados <?php echo $fecha = date('Y'); ?> &copy;
+    </p>
+</footer>
 
 </body>
 

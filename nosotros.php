@@ -1,6 +1,6 @@
 <?php 
-    $activo = 2;
-    include 'includes/templates/header.php'; 
+   require 'includes/funciones.php';
+   incluirTemplate('header', 2);
 ?>
     
     <main class="contenedor">
@@ -24,5 +24,5 @@
     </main>
 
     <?php 
-        include 'includes/templates/footer.php';
+        incluirTemplate('footer');
     ?>
