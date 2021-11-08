@@ -190,11 +190,51 @@ h3{
     line-height: 1.2;
 }
 
+/**FORMULARIO**/
+.formulario__campo:hover{
+    transition: 0.5s ease;
+    cursor: pointer;
+    scale: 1.10;
+    transition-duration: 0.6s;
+    border-radius: 2rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(146, 244, 249, 0.5);
+
+}
+.formulario__submit:hover{
+    transition: 0.5s ease;
+    cursor: pointer;
+    scale: 1.15;
+    transition-duration: 0.6s;
+    background: linear-gradient(125deg, transparent 10%, #ff8000 10%, #ff8000 90%,transparent 10%);
+    color: black;
+}
+.formulario{
+    text-align: center;
+    font-size: 2.1rem;
+    font-family: var(--fuentePrincipal);
+}
+
+.formulario__campo{
+    background-color: black;
+    color: var(--secundario);
+    text-align: center;
+    border-style: none;
+    width: 45rem;
+}
+.formulario__submit{
+    background: linear-gradient(125deg, transparent 10%, var(--secundario) 10%, var(--secundario) 90%,transparent 10%);
+    width: 25rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.8rem;
+    border-style: none;
+}
+
 /**FOOTER**/
 .footer{
     background-color: var(--secundario);
     padding: 1rem 0;
     margin-top: 2rem;
+    text-align: center;
 }
 
 .footer__texto{
