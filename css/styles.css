@@ -37,7 +37,7 @@ img{
 }
 
 .contenedor{
-    max-width: 140rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -58,6 +58,54 @@ h2{
 
 h3{
     font-size: 2.4rem
+}
+
+.boton{
+    background: linear-gradient(125deg, transparent 10%, var(--secundario) 10%, var(--secundario) 90%,transparent 10%);
+    border-style: none;
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+@media (min-width: 76.8rem){
+    .boton{
+        width: auto;
+    }
+}
+.boton:hover{
+    transition: 0.4s ease;
+    cursor: pointer;
+    scale: 1.15;
+    transition-duration: 0.35s;
+    background: linear-gradient(125deg, transparent 10%, #ff8000 10%, #ff8000 90%,transparent 10%);
+    color: black;
+}
+
+/*UTILIDADES*/
+.w-sm-100{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+@media (min-width: 76.8rem){
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.alinear-derecha{
+    justify-content: center;
 }
 
 /**HEADER**/
@@ -161,17 +209,56 @@ h3{
     line-height: 1.2;
 }
 
+/**FORMULARIO**/
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.1rem;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+}
+
+.formulario__campo{
+    background-color: var(--blanco);
+    color: var(--secundario);
+    text-align: center;
+    border-style: none;
+    width: 100%;
+}
+
+.formulario__campo:hover{
+    transition: 0.5s ease;
+    scale: 1.10;
+    transition-duration: 0.6s;
+    border-radius: 2rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(146, 244, 249, 0.5);
+
+}
+
+
 /**FOOTER**/
 .footer{
     background-color: var(--secundario);
     padding: 1rem 0;
     margin-top: 2rem;
+    text-align: center;
 }
 
 .footer__texto{
     text-align: center;
     font-family: var(--fuentePrincipal);
     font-size: 2.2rem;
+}
+
+.footer__iconos{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.footer__iconos--icono{
+    margin: 0 2rem;
 }
   
   /**NOSOTROS**/
