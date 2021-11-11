@@ -2,34 +2,23 @@
    require 'includes/funciones.php';
    incluirTemplate('header', 3);
 ?>
-    
-    <section class="contenedor">
-        <h1>Contactanos</h1>
-        
-        <div class="bloques">
-            <div class="bloque">
-                <img src="img/ico/facebook.png" alt="facebook">
-                <h3 class="blpque__titulo">JoJoComicsOficial</h3>
-            </div> <!--.bloque-->
-    
-            <div class="bloque">
-                <img src="img/ico/twitter.png" alt="twitter">
-                <h3 class="blpque__titulo">JJComicsOf</h3>
-            </div> <!--.bloque-->
-    
-            <div class="bloque">
-                <img src="img/ico/telefono.png" alt="telefono">
-                <h3 class="blpque__titulo">87-14-55-99-78</h3>
-            </div> <!--.bloque-->
-    
-            <div class="bloque">
-                <img src="img/ico/youtube.png" alt="youtube">
-                <h3 class="blpque__titulo">JJComicsOficial</h3>
-            </div> <!--.bloque-->
-    
-        </div> <!--.bloques-->
-    
-    </section>
+    <main>
+        <h1>¿No encuentras lo que buscas?</h1>
+        <h2>Dejanos tu sugerencia 😃</h2>
+        <form class="formulario">
+            <fieldset>
+                <legend>Haz tu pedido</legend>
+                <input class="formulario__campo" type="text" name="nombre" placeholder="Tu nombre" size="35"> <br><br>
+                <input class="formulario__campo" type="email" name="correo" placeholder="Tu correo" size="35"> <br><br>
+                <input class="formulario__campo" type="text" name="comic" placeholder="Nombre del Comic" size="35"> <br><br>
+                <input class="formulario__campo" type="text" name="editorial" placeholder="Editorial" size="35"> <br><br>
+                <input class="formulario__campo" type="number" min="1900" max="2099" step="1" name="año" placeholder="Año de publicación" size="35">
+                <div class="alinear-derecha flex">
+                    <input class="boton w-sm-100" type="submit" value="Enviar petición">
+                </div>
+            </fieldset>
+        </form>
+    </main>
 
     <?php 
         incluirTemplate('footer');

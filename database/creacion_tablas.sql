@@ -12,11 +12,7 @@ CREATE TABLE cliente (
     estado VARCHAR(255),
     cp VARCHAR(5)
 );
-
---@block
-ALTER TABLE comic
-ADD COLUMN imagen VARCHAR(255),
-ADD COLUMN numPaginas VARCHAR(25);
+ 
 --@block
 CREATE TABLE pedido(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -33,6 +29,8 @@ CREATE TABLE comic(
     nombre VARCHAR(255) NOT NULL,
     precio VARCHAR(255) NOT NULL,
     sinopsis TEXT NOT NULL,
+    imagen VARCHAR(255),
+    numPaginas VARCHAR(25),
     id_categoria INT NOT NULL,
     id_editorial INT NOT NULL,
     id_autor INT NOT NULL,
@@ -80,7 +78,7 @@ ADD FOREIGN KEY(id_autor) REFERENCES autor(id);
 
 --@block
 ALTER TABLE comic
-ADD FOREIGN KEY(id_existencia) REFERENCES existencia(id);
+DROP FOREIGN KEY id_existencia;
 
 
 --TABLA PRODUCTOSPEDIDOS
@@ -96,3 +94,6 @@ CREATE TABLE productosPedido(
     FOREIGN KEY(id_comic) REFERENCES comic(id),
     CHECK(descuento <= 1)
 );
+
+--@block
+DROP TABLE comic;
