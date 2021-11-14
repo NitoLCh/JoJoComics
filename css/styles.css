@@ -19,6 +19,7 @@ body{
     background-color: var(--primario);
     font-size: 1.6rem;
     line-height: 1.5;
+    font-family: var(--fuentePrincipal);
 }
 
 p{
@@ -76,6 +77,16 @@ h3{
     border: none;
 }
 
+.boton-rojo{
+    display: block;
+    background: linear-gradient(125deg, transparent 10%, red 10%, red 90%,transparent 10%);
+}
+
+.boton-amarillo{
+    display: block;
+    background: linear-gradient(125deg, transparent 10%, rgb(255, 195, 11) 10%, rgb(255, 195, 11) 90%,transparent 10%);
+}
+
 @media (min-width: 76.8rem){
     .boton{
         width: auto;
@@ -88,6 +99,10 @@ h3{
     transition-duration: 0.35s;
     background: linear-gradient(125deg, transparent 10%, #ff8000 10%, #ff8000 90%,transparent 10%);
     color: black;
+}
+
+.boton-rojo:hover{
+    background: linear-gradient(125deg, transparent 10%, red 10%, red 90%,transparent 10%);
 }
 
 /*UTILIDADES*/
@@ -358,4 +373,32 @@ h3{
 
   .error{
       background-color: rgb(189, 7, 7);
+  }
+
+  .exito{
+      background-color: rgb(29, 190, 56);
+  }
+
+
+  /*TABLAS*/
+  .tabla{
+    margin-top: 4rem;
+    width: 100%;
+  }
+
+  .tabla thead{
+      background-color: var(--secundario);
+  }
+
+  .tabla thead th{
+      color: var(--blanco);
+      padding: 2rem;
+  }
+
+  .tabla tbody td{
+      color: var(--blanco);
+      text-align: center;
+  }
+  .imagen-tabla{
+      width: 10rem;
   }

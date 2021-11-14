@@ -27,16 +27,18 @@
     //Ejecutar el código después de que el usuario envía el formulario
     if($_SERVER['REQUEST_METHOD']==='POST'){
 
-        $nombre = $_POST['nombre'];
-        $precio = $_POST['precio'];
-        $sinopsis = $_POST['sinopsis'];
-        $numPaginas = $_POST['numPaginas'];
-        $año = $_POST['año'];
-        $idCategoria  = $_POST['categoria'];
-        $idEditorial = $_POST['editorial'];
-        $idAutor = $_POST['autor'];
-        $existencia = $_POST['existencia'];
+        $nombre = mysqli_real_escape_string($db, $_POST['nombre']);
+        $precio = mysqli_real_escape_string($db, $_POST['precio']);
+        $sinopsis = mysqli_real_escape_string($db, $_POST['sinopsis']);
+        $numPaginas = mysqli_real_escape_string($db, $_POST['numPaginas']);
+        $año = mysqli_real_escape_string($db, $_POST['año']);
+        $idCategoria  = mysqli_real_escape_string($db, $_POST['categoria']);
+        $idEditorial = mysqli_real_escape_string($db, $_POST['editorial']);
+        $idAutor = mysqli_real_escape_string($db, $_POST['autor']);
+        $existencia = mysqli_real_escape_string($db, $_POST['existencia']);
         
+        //ASIGNAR ARCHIVOS HACIA UNA VARIABLE
+        $imagen = $_FILES['imagen'];
 
         if(!$nombre){
             $errores[]= "Debes añadir un título";
@@ -65,20 +67,39 @@
         if(!$existencia){
             $errores[]= "Debes añadir la existencia";
         }
-        
+        if(!$imagen['name'] || $imagen['error']){
+            $errores[]= "La portada es obligatoria";
+        }
+        //VALIDAR EL TAMAÑO DE LA IMAGEN
+        $tamañoImagen = 1000 * 1000;
+        //TAMAÑO MAXIMO = 1MB
+        if($imagen['size'] > $tamañoImagen){
+            $errores[] = "La imagen es muy pesada";
+        }
 
         //REVISAR QUE EL ARREGLO DE ERRORES ESTÁ VACÍO
         if(empty($errores)){
+            $carpetaImagenes = '../../portadas/';
+
+            if(!is_dir($carpetaImagenes)){
+                mkdir($carpetaImagenes);
+            }
+
+            //GENERAR UN NOMBRE UNICO A LA IMAGEN
+            $nombreImagen = md5( uniqid( rand(), true )) . ".jpg";
+
+            //SUBIR LA IMAGEN 
+            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+
             //INSERTAR EN LA BASE DE DATOS
-            $query = " INSERT INTO comic (nombre, precio, sinopsis, numPaginas, año, id_categoria, id_editorial, id_autor, existencia) VALUES ( '$nombre', '$precio', '$sinopsis', '$numPaginas', '$año', '$idCategoria', '$idEditorial', '$idAutor', '$existencia' ) ";
+            $query = " INSERT INTO comic (nombre, precio, sinopsis, imagen, numPaginas, año, id_categoria, id_editorial, id_autor, existencia) VALUES ( '$nombre', '$precio', '$sinopsis', '$nombreImagen', '$numPaginas', '$año', '$idCategoria', '$idEditorial', '$idAutor', '$existencia' ) ";
 
             $insercion = mysqli_query($db, $query);
 
-            echo $query;
 
             if($insercion){
                 //REDIRECCIONAR AL USUARIO
-                header('Location: /admin');
+                header('Location: /admin?resultado=1');
             }
 
         }
@@ -97,14 +118,16 @@
             </div>
         <?php endforeach; ?>
 
-        <form class="formulario" id="crear-comic" method="POST" action="/admin/properties/crear.php">
+        <form class="formulario" id="crear-comic" method="POST" action="/admin/properties/crear.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>Informacion General</legend>
 
                 <label for="nombre">Titulo</label>
                 <input class="formulario__campo" type="text" id="nombre" name="nombre" placeholder="Titulo Comic" value="<?php echo $nombre; ?>">
+                
                 <label for="precio">Precio</label>
                 <input class="formulario__campo" type="number" min="1" id="precio" name="precio" value="<?php echo $precio; ?>">
+                
                 <label for="Autor">Autor</label>
                 <select class="formulario__campo" id="autor" name="autor">
                     <option disabled selected>--Autor--</option>
@@ -114,16 +137,22 @@
                         </option>
                     <?php endwhile; ?>
                 </select> 
+                
                 <label for="año">Año</label>
                 <input class="formulario__campo" type="number" id="año" min="1900" name="año" max="2099" value="<?php echo $año; ?>">
+                
                 <label for="numPaginas">Paginas</label>
                 <input class="formulario__campo" type="text" id="numPaginas" name="numPaginas" placeholder="N° de Páginas" value="<?php echo $numPaginas; ?>">
+                
                 <label for="imagen">Imagen</label>
-                <input class="formulario__campo formulario__campo--imagen" type="file" id="imagen" accept="image/png, image/jpg, image/jpeg">
+                <input class="formulario__campo formulario__campo--imagen" type="file" id="imagen" name="imagen" accept="image/png, image/jpg, image/jpeg">
+            
             </fieldset>
 
             <fieldset>
+                
                 <legend>Detalles</legend>
+                
                 <label for="categoria">Categoría</label>
                 <select class="formulario__campo" name="categoria" id="categoria">
                     <option disabled selected>--Categoría--</option>
@@ -133,6 +162,7 @@
                         </option>
                     <?php endwhile; ?>
                 </select>
+                
                 <label for="editorial">Editorial</label>
                 <select class="formulario__campo" type="text" id="editorial" name="editorial">
                     <option disabled selected>--Editorial--</option>
@@ -142,10 +172,13 @@
                         </option>
                     <?php endwhile; ?>
                 </select>
+                
                 <label for="existencia">Existencia</label>
                 <input class="formulario__campo" type="number" min="0" id="existencia" name="existencia" value="<?php echo $existencia; ?>">
+                
                 <label for="sinopsis">Sinopsis</label>
                 <textarea class="formulario__campo--textarea" id="sinopsis" name="sinopsis"> <?php echo $sinopsis; ?> </textarea>
+            
             </fieldset> 
         </form>
         <button class="boton" type="submit" form="crear-comic">Crear Comic</button>
