@@ -67,6 +67,7 @@ h3{
     padding: 1rem 3rem;
     margin-top: 3rem;
     font-size: 2rem;
+    font-family: var(--fuentePrincipal);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -211,21 +212,58 @@ h3{
 
 /**FORMULARIO**/
 .formulario{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.1rem;
-    font-family: var(--fuentePrincipal);
-    color: var(--blanco);
+       display: flex;
+       flex-direction: column;
+        font-size: 3rem;
+        font-family: var(--fuentePrincipal);
+        color: var(--blanco);
+    }
+
+@media (min-width: 76.8rem) {
+    .formulario{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-family: var(--fuentePrincipal);
+        color: var(--blanco);
+    }
+}
+.formulario fieldset{
+    display: grid;
+    columns: 1;
+}
+
+.formulario label{
+    font-size: 2.5rem;
 }
 
 .formulario__campo{
+    display: block;
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
     background-color: var(--blanco);
     color: var(--secundario);
     text-align: center;
     border-style: none;
     width: 100%;
+    height: 4rem;
 }
+
+.formulario__campo--textarea{
+    height: 25rem;
+    width: 45rem;
+    color:var(--secundario);
+    font-size: 1.8rem;
+    text-align: justify;
+    font-family: var(--fuentePrincipal);
+}
+
+.formulario__campo--imagen{
+    background-color: var(--primario);
+}
+
 
 .formulario__campo:hover{
     transition: 0.5s ease;
@@ -304,4 +342,20 @@ h3{
   
   .bloque__titulo {
     margin: 0;
+  }
+
+  /*ALERTAS*/
+  .alerta{
+      padding: .5rem;
+      text-align: center;
+      color: var(--blanco);
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin: 1rem 0;
+      font-family: var(--fuentePrincipal);
+  }
+
+  .error{
+      background-color: rgb(189, 7, 7);
   }

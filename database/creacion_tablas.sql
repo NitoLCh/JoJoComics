@@ -26,15 +26,16 @@ CREATE TABLE pedido(
 --@block
 CREATE TABLE comic(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(255) NOT NULL,
-    precio VARCHAR(255) NOT NULL,
-    sinopsis TEXT NOT NULL,
+    nombre VARCHAR(255),
+    precio VARCHAR(255),
+    sinopsis TEXT,
     imagen VARCHAR(255),
     numPaginas VARCHAR(25),
+    año YEAR,
+    existencia INT,
     id_categoria INT NOT NULL,
     id_editorial INT NOT NULL,
-    id_autor INT NOT NULL,
-    id_existencia INT NOT NULL
+    id_autor INT NOT NULL
 );
 
 --@block
@@ -55,30 +56,21 @@ CREATE TABLE autor(
     nombre VARCHAR(255)
 );
 
---@block
-CREATE TABLE existencia(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    id_producto INT NOT NULL,
-    cantidad INT,
-    FOREIGN KEY(id_producto) REFERENCES comic(id)
-);
-
 --AGREGAR LAS LLAVES FORANEAS A LA TABLA COMIC
 --@block
 ALTER TABLE comic
-ADD FOREIGN KEY(id_categoria) REFERENCES categoria(id); 
+ADD CONSTRAINT FK_categoria 
+FOREIGN KEY(id_categoria) REFERENCES categoria(id); 
 
 --@block
 ALTER TABLE comic
-ADD FOREIGN KEY(id_editorial) REFERENCES editorial(id);
+ADD CONSTRAINT FK_editorial 
+FOREIGN KEY(id_editorial) REFERENCES editorial(id);
 
 --@block
 ALTER TABLE comic
-ADD FOREIGN KEY(id_autor) REFERENCES autor(id);
-
---@block
-ALTER TABLE comic
-DROP FOREIGN KEY id_existencia;
+ADD CONSTRAINT FK_autor
+FOREIGN KEY(id_autor) REFERENCES autor(id); 
 
 
 --TABLA PRODUCTOSPEDIDOS
@@ -94,6 +86,3 @@ CREATE TABLE productosPedido(
     FOREIGN KEY(id_comic) REFERENCES comic(id),
     CHECK(descuento <= 1)
 );
-
---@block
-DROP TABLE comic;

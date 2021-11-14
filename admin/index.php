@@ -4,7 +4,7 @@
 ?>
     <main class="contenedor">
         <h1>Administrador de Productos</h1>
-        <a href="/admin/properties/crear.php" class=boton>Nueva propiedad</a>
+        <a class="boton" href="/admin/properties/crear.php" class=boton>Nueva propiedad</a>
     </main>
 <?php
     incluirTemplate('footer');
