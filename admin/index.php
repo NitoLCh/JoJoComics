@@ -11,6 +11,28 @@
 
     //MENSAJE CONDICIONAL
     $resultado = $_GET['resultado'] ?? null;
+
+    //
+    if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
+        $id = $_POST['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+
+        if($id){
+            $eliminarArchivo = " SELECT imagen FROM comic WHERE id = ${id} ";
+            
+            $resultadoArch = mysqli_query($db, $eliminarArchivo);
+            $comic = mysqli_fetch_assoc($resultadoArch);
+
+            unlink('../portadas/' . $comic['imagen']);
+
+            $eliminarRegistro = " DELETE FROM comic WHERE id = ${id} ";
+            $resultadoElim = mysqli_query($db, $eliminarRegistro);
+
+            if($resultadoElim){
+                header('Location: /admin?resultado=3');
+            }
+        }
+    }
     
     //INCLUYE UN TEMPLATE
     require '../includes/funciones.php';
@@ -19,9 +41,13 @@
     <main class="contenedor">
         <h1>Administrador de Productos</h1>
         <?php if( intval( $resultado ) === 1 ): ?>
-            <p class="alerta exito">Anuncio creado correctamente</p>
+            <p class="alerta exito">Comic Creado Correctamente</p>
+        <?php elseif( intval( $resultado ) === 2 ): ?>
+            <p class="alerta exito">Comic Actualizado Correctamente</p>
+        <?php elseif( intval( $resultado ) === 3 ): ?>
+            <p class="alerta exito">Comic Eliminado Correctamente</p>
         <?php endif; ?>
-        <a class="boton" href="/admin/properties/crear.php" class=boton>Nueva propiedad</a>
+        <a class="boton" href="/admin/properties/crear.php" class=boton>Nuevo Comic</a>
         
         <table class="tabla">
             <thead>
@@ -54,8 +80,11 @@
                     <td> <?php echo $comic['editorial']; ?> </td>
                     <td> <?php echo $comic['categoria']; ?> </td>
                     <td>
-                        <a class="boton boton-rojo" href="#">Eliminar</a>
-                        <a class="boton boton-amarillo" href="#">Actualizar</a>
+                        <form method="POST" class="w-sm-100">
+                            <input type="hidden" name="id" value="<?php echo $comic['id']; ?>">
+                            <input type="submit" class="boton boton-rojo" value="Eliminar">
+                        </form>
+                        <a class="boton boton-amarillo" href="admin/properties/actualizar.php?id=<?php echo $comic['id']; ?>">Actualizar</a>
                     </td>
                 </tr>
                 <?php endwhile; ?>

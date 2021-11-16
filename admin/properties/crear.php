@@ -109,7 +109,7 @@
     incluirTemplate('header');
 ?>
     <main class="contenedor">
-        <h1>Crear</h1>
+        <h1>Crear Comic</h1>
         <a href="/admin" class=boton>Volver</a>
 
         <?php foreach($errores as $error): ?>

@@ -91,6 +91,9 @@ h3{
     .boton{
         width: auto;
     }
+    .boton-rojo{
+        width: 100%;
+    }
 }
 .boton:hover{
     transition: 0.4s ease;
@@ -401,4 +404,8 @@ h3{
   }
   .imagen-tabla{
       width: 10rem;
+  }
+
+  .imagen-small{
+      width: 20rem;
   }
