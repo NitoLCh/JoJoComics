@@ -23,9 +23,9 @@ body{
 }
 
 p{
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 300;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--fuentePrincipal);
     color: var(--blanco);
 }
 
@@ -409,3 +409,15 @@ h3{
   .imagen-small{
       width: 20rem;
   }
+
+  /*Tienda*/
+  @media (min-width: 76.8rem){
+    .tienda{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .tienda__imagen{
+        height: 80rem;
+    }
+}

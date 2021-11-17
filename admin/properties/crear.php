@@ -95,7 +95,7 @@
             $query = " INSERT INTO comic (nombre, precio, sinopsis, imagen, numPaginas, año, id_categoria, id_editorial, id_autor, existencia) VALUES ( '$nombre', '$precio', '$sinopsis', '$nombreImagen', '$numPaginas', '$año', '$idCategoria', '$idEditorial', '$idAutor', '$existencia' ) ";
 
             $insercion = mysqli_query($db, $query);
-
+            
 
             if($insercion){
                 //REDIRECCIONAR AL USUARIO

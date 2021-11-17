@@ -11,11 +11,10 @@
 
 ?>
 
-
 <div class="grid">
     <?php while( $comic = mysqli_fetch_assoc($resultado) ): ?>
     <div class="producto">
-        <a href="#">
+        <a href="/tienda.php?id=<?php echo $comic['id']; ?>">
             <img class="producto__portada" src="../../portadas/<?php echo $comic['imagen']; ?>" alt="imagen comic">
             <div class="producto__informacion">
                 <p class="producto__titulo"> <?php echo $comic['nombre']; ?> </p>
