@@ -22,7 +22,7 @@
     <h1><?php echo $comic['nombre']; ?></h1>
     <div class="tienda">
         <img class="tienda__imagen" src="../../portadas/<?php echo $comic['imagen']; ?>" alt="Producto">
-        <div>
+        <div class="tienda__info">
             <p>
                 <?php echo $comic['sinopsis']; ?>
             </p>

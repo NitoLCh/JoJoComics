@@ -27,6 +27,7 @@ p{
     font-weight: 300;
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
+    margin: 2rem 0.5rem;
 }
 
 a{
@@ -129,13 +130,32 @@ h3{
 
 /**HEADER**/
 .header{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .header__logo{
-    margin: 3rem 0;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+@media (min-width: 76.8rem) {
+    .header__logo{
+        grid-column: 2/3;
+    }
+}
+
+.header__iconos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 3;
+    gap: 3rem;
+}
+
+
 
 /**BARRA DE NAVEGACION**/
 .navegacion{
@@ -176,11 +196,14 @@ h3{
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem),1fr));
+    margin: 2rem 3rem;
 }
 @media (min-width: 76.8rem){
     .grid{
         grid-template-columns: repeat(3, 1fr);
+        margin: auto auto;
     }
+   
 }
 
 /*PRODUCTO*/
@@ -230,12 +253,13 @@ h3{
 
 /**FORMULARIO**/
 .formulario{
-       display: flex;
-       flex-direction: column;
-        font-size: 3rem;
-        font-family: var(--fuentePrincipal);
-        color: var(--blanco);
-    }
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    margin: 0 2rem;
+}
 
 @media (min-width: 76.8rem) {
     .formulario{
@@ -321,6 +345,7 @@ h3{
   .nosotros {
     display: grid;
     grid-template-rows: (2, auto);
+    margin: 0 2rem;
   }
   
   @media (min-width: 768px) {
@@ -419,5 +444,27 @@ h3{
     }
     .tienda__imagen{
         height: 80rem;
+        width: 75%;
+        height: 90%;
+        align-items: center;
+        justify-content: center;
     }
+    
+    .tienda__info{
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.tienda{
+    display: grid;
+    align-content: center;
+    margin: 0 5rem;
+}
+
+.tienda__imagen{
+    width: 100%;
+
 }

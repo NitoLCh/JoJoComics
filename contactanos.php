@@ -3,7 +3,7 @@
    incluirTemplate('header', 3);
 ?>
 
-    <main>
+    <main class="contenedor">
         <h1>¿No encuentras lo que buscas?</h1>
         <h2>Dejanos tu sugerencia 😃</h2>
         <form class="formulario">
