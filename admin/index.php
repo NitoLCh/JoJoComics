@@ -1,4 +1,10 @@
-<?php 
+<?php
+    session_start();
+
+    if($_SESSION['rol'] != 1){
+        header('Location: /');
+    }
+
     //IMPORTAR LA CONEXION
     require '../includes/config/database.php';
     $db = conectarDB();
@@ -84,7 +90,7 @@
                             <input type="hidden" name="id" value="<?php echo $comic['id']; ?>">
                             <input type="submit" class="boton boton-rojo" value="Eliminar">
                         </form>
-                        <a class="boton boton-amarillo" href="admin/properties/actualizar.php?id=<?php echo $comic['id']; ?>">Actualizar</a>
+                        <a class="boton boton-amarillo" href="/admin/properties/actualizar.php?id=<?php echo $comic['id']; ?>">Actualizar</a>
                     </td>
                 </tr>
                 <?php endwhile; ?>

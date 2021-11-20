@@ -27,10 +27,10 @@
                 <?php echo $comic['sinopsis']; ?>
             </p>
 
-            <form class="formulario">   
-                <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">
+            <form id="compra" class="formulario" >   
+                <input class="formulario__campo" type="number" placeholder="Cantidad" min="1" value="1">
             </form>
-            <input class="boton w-sm-100" type="submit" value="Agregar al Carrito">
+            <input class="boton w-sm-100" type="submit" form="compra" value="Agregar al Carrito">
         </div>
     </div>
 </main>

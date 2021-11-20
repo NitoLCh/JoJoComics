@@ -1,4 +1,10 @@
 <?php 
+    session_start();
+
+    if($_SESSION['rol'] != 1){
+        header('Location: /');
+    }
+
     //VALIDACION DE LA URL POR EL ID
     $id = $_GET['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -111,7 +117,7 @@
 
             if( $imagen['name'] ){
                 //ELIMINAR IMAGEN PREVIA
-                unlink($carpetaImagenes - $comic['imagen']);
+                unlink($carpetaImagenes . $comic['imagen']);
                 
                 //GENERAR UN NOMBRE UNICO A LA IMAGEN
                 $nombreImagen = md5( uniqid( rand(), true )) . ".jpg";
@@ -126,7 +132,7 @@
             
 
             //ACTUALIZAR COMIC
-            $query = " UPDATE comic SET nombre = '${nombre}', precio = '${precio}', sinopsis = '${sinopsis}', numPaginas = '${numPaginas}', año = '${año}', id_categoria = ${idCategoria}, id_editorial = ${idEditorial}, id_autor = ${idAutor}, existencia = ${existencia} WHERE id = ${id} "; 
+            $query = " UPDATE comic SET nombre = '${nombre}', precio = '${precio}', sinopsis = '${sinopsis}', numPaginas = '${numPaginas}', imagen = '${nombreImagen}', año = '${año}', id_categoria = ${idCategoria}, id_editorial = ${idEditorial}, id_autor = ${idAutor}, existencia = ${existencia} WHERE id = ${id} "; 
           
             $insercion = mysqli_query($db, $query);
 
@@ -159,7 +165,7 @@
                 <input class="formulario__campo" type="text" id="nombre" name="nombre" placeholder="Titulo Comic" value="<?php echo $nombre; ?>">
                 
                 <label for="precio">Precio</label>
-                <input class="formulario__campo" type="number" min="1" id="precio" name="precio" value="<?php echo $precio; ?>">
+                <input class="formulario__campo" type="number" required min="1" step="any" id="precio" name="precio" value="<?php echo $precio; ?>">
                 
                 <label for="Autor">Autor</label>
                 <select class="formulario__campo" id="autor" name="autor">

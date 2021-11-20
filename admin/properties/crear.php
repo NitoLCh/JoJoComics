@@ -1,4 +1,10 @@
 <?php 
+    session_start();
+
+    if($_SESSION['rol'] != 1){
+        header('Location: /');
+    }
+
     //BASE DE DATOS
     require'../../includes/config/database.php';
     $db = conectarDB();
@@ -126,7 +132,7 @@
                 <input class="formulario__campo" type="text" id="nombre" name="nombre" placeholder="Titulo Comic" value="<?php echo $nombre; ?>">
                 
                 <label for="precio">Precio</label>
-                <input class="formulario__campo" type="number" min="1" id="precio" name="precio" value="<?php echo $precio; ?>">
+                <input class="formulario__campo" type="number" required min="1" step="any" id="precio" name="precio" value="<?php echo $precio; ?>">
                 
                 <label for="Autor">Autor</label>
                 <select class="formulario__campo" id="autor" name="autor">
