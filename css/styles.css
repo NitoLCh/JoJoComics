@@ -425,7 +425,7 @@ h3{
 
   .tabla tbody td{
       color: var(--blanco);
-      text-align: center;
+      text-align: center;   
   }
   .imagen-tabla{
       width: 10rem;
@@ -468,3 +468,10 @@ h3{
     width: 100%;
 
 }
+
+.link{
+    color: var(--secundario);
+    font-size: 2rem;
+    text-align: left;
+}
+

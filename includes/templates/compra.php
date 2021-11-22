@@ -27,7 +27,8 @@
                 <?php echo $comic['sinopsis']; ?>
             </p>
 
-            <form id="compra" class="formulario" >   
+            <form id="compra" class="formulario" method="POST">   
+                <input type="hidden" name="id_producto" value="<?php echo $comic['id'];?>">
                 <input class="formulario__campo" type="number" placeholder="Cantidad" min="1" value="1">
             </form>
             <input class="boton w-sm-100" type="submit" form="compra" value="Agregar al Carrito">

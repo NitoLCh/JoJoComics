@@ -45,6 +45,7 @@
     incluirTemplate('header');
 ?>
     <main class="contenedor">
+        <h1> ¡Hola <?php echo $_SESSION['nombre']; ?>!</h1>
         <h1>Administrador de Productos</h1>
         <?php if( intval( $resultado ) === 1 ): ?>
             <p class="alerta exito">Comic Creado Correctamente</p>

@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<?php session_start(); ?>
-
 <body>
     <header class="header">
         <div class="header__logo">
@@ -20,7 +18,7 @@
         </a>
         </div>
         <div class="header__iconos">
-            <a  href="#">
+            <a  href="/carrito.php?id=<?php echo $_SESSION['id']; ?>">
                 <svg width="45" height="45" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEEEEE" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <circle cx="6" cy="19" r="2" />
@@ -36,6 +34,10 @@
                     <path d="M20 12h-13l3 -3m0 6l-3 -3" />
                 </svg>
             </a>
+            <?php if($_SESSION['nombre']): ?>
+            <a class="link" href="#">Hola <?php echo $_SESSION['nombre']; ?></a>
+            <a class="link" href="/admin/properties/cerrar_sesion.php">Cerrar Sesion</a>
+            <?php endif;?>
         </div>
     </header>
 

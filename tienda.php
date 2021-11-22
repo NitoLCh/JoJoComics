@@ -1,4 +1,5 @@
 <?php 
+    session_start(); 
     require 'includes/funciones.php';
     incluirTemplate('header');
 ?>

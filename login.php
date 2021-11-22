@@ -1,7 +1,8 @@
 <?php
     require 'includes/config/database.php';
     $db = conectarDB();
-
+    session_start();
+    
     $errores = [];
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -35,8 +36,10 @@
                     session_start();
                     $_SESSION['correo'] = $usuario['email'];
                     $_SESSION['rol'] = $usuario['administrador'];
+                    $_SESSION['id'] = $usuario['id'];
                     $_SESSION['login'] = true;
                     $_SESSION['nombre'] = $usuario['nombre'];
+                    header('Location: /');
 
                 }
                 else{
@@ -46,6 +49,7 @@
             else{
                 $errores[] = " El Usuario no existe "; 
             }
+
         }
     } 
 
@@ -71,6 +75,8 @@
 
                 <label for="contraseña">Contraseña</label>
                 <input class="formulario__campo" type="password" name="contraseña" placeholder="Contraseña" required>
+
+                <a class="link" href="/registro.php">¿No tienes una cuenta? Registrate</a>
 
                 <div class="alinear-derecha flex">
                     <input class="boton w-sm-100" type="submit" value="Iniciar Sesión">
