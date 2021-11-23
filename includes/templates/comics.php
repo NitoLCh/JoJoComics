@@ -2,7 +2,8 @@
     //IMPORTAR LA CONEXION A LA BD
     require __DIR__ . '/../config/database.php';
     $db = conectarDB();
-    
+  
+
     //CONSULTAR 
     $query = " SELECT comic.id as id, comic.nombre as nombre, comic.precio as precio, comic.imagen as imagen, comic.numPaginas as numPaginas, comic.año as año, comic.existencia as existencia, autor.nombre as autor, editorial.nombre as editorial, categoria.nombre as categoria FROM comic INNER JOIN autor ON autor.id = comic.id_autor INNER JOIN editorial ON editorial.id = comic.id_editorial INNER JOIN categoria ON categoria.id = comic.id_categoria ORDER BY id";
 

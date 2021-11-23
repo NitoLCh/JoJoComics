@@ -31,13 +31,29 @@
             $errores[] = " El apellido es obligatorio ";
         }
 
+        $queryVerificacion = " SELECT id FROM cliente WHERE email = $email ";
+        $verificacion = mysqli_query($db, $queryVerificacion);
+        var_dump($queryVerificacion);
+        if($verificacion){
+            $errores[] = " El email ya existe ";
+        }
+
 
         if(empty($errores)){
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             
-            //REVISAR SI EL USUARIO EXISTE
+            //INSERTAR
             $query = " INSERT INTO cliente (nombre, apellido, email, contraseña) VALUES ('${nombre}', '${apellido}', '${email}', '${passwordHash}')";
             $resultado = mysqli_query($db, $query);
+
+            $queryID = " SELECT id FROM cliente WHERE email = '${email}' ";
+            $resultadoId = mysqli_query($db, $queryID);
+
+            $cliente = mysqli_fetch_assoc($resultadoId);
+            $clienteid = $cliente['id'];
+
+            $queryCarro = " INSERT INTO carrito (id_cliente) VALUES ($clienteid) ";
+            $insercionCarrito = mysqli_query($db, $queryCarro);
 
             header('Location: /login.php');
         }
