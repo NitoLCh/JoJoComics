@@ -28,8 +28,9 @@
 
         $queryVerificacion = " SELECT id_carrito, id_comic FROM carritoProducto WHERE id_carrito = '${id_carrito}' AND id_comic = '${id_comic}'";
         $resultaVerificacion = mysqli_query($db, $queryVerificacion);
-
-        if(!$resultaVerificacion){
+        $verificacion = mysqli_fetch_assoc($resultaVerificacion);
+        
+        if($verificacion===NULL){
             $query = " INSERT INTO carritoProducto(id_carrito, id_comic, cantidad) VALUES ('${id_carrito}', '${id_comic}', '${cantidad}')";
             $resultado = mysqli_query($db, $query);
 
@@ -37,7 +38,7 @@
                 header("Location: /tienda.php?id=$id&request=1");
             }
         }
-        if($resultaVerificacion){
+        if($verificacion['id_carrito']){
             $query = " UPDATE carritoProducto SET cantidad = cantidad + ${cantidad} WHERE id_carrito = '${id_carrito}' AND id_comic = '${id_comic}'";
             $resultado = mysqli_query($db, $query);
 

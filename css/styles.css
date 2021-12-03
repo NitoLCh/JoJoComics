@@ -118,6 +118,18 @@ h3{
     display: flex;
 }
 
+
+.reset{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    margin: 0;
+}
+
 @media (min-width: 76.8rem){
     .w-sm-100{
         width: auto;
@@ -445,9 +457,7 @@ h3{
     .tienda__imagen{
         height: 80rem;
         width: 75%;
-        height: 90%;
-        align-items: center;
-        justify-content: center;
+       align-self: center;
     }
     
     .tienda__info{
@@ -482,6 +492,7 @@ h3{
     display: grid;
     gap: 2rem;
     grid-template-rows: repeat(auto-fill, minmax(min(100%, 25rem),1fr));
+    grid-template-columns: repeat(2, 1fr);
     margin: 3rem 0;
     padding: 3rem 0;
 }
@@ -493,14 +504,20 @@ h3{
 
 .carrito__imagen{
     height: 80rem;
-    width: 50%;
-    height: 70%;
+    width: 21rem;
+    height: 32rem;
 }
 
 .carrito__info{
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
+    padding: 0 3rem;
+    align-self: end;
     
+}
+
+.carrito__info form{
+    display: inline;
 }
 
 .carrito__info--titulo{
@@ -534,5 +551,27 @@ h3{
 
 .carrito__subtotal{
     text-align: right;
+    font-size: 3rem;
     font-weight: bold;
+}
+
+.carrito__total{
+    display: flex;
+    align-items: flex-end;
+    gap: 4rem;
+    grid-column: 2;
+}
+
+.carrito__vacio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito__info--compra{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    padding: 0 3rem;
+    align-self: start;
+    
 }
