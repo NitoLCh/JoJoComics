@@ -5,13 +5,13 @@
                 "authProtocol": "default"
             },
             "previewLimit": 50,
-            "server": "localhost",
+            "server": "b8uxlnucrai5wm4jiap9-mysql.services.clever-cloud.com",
             "port": 3306,
             "driver": "MySQL",
-            "name": "tienda",
-            "database": "jojo_comics",
-            "username": "root",
-            "password": "mateakeni20"
+            "name": "nube_tienda",
+            "database": "b8uxlnucrai5wm4jiap9",
+            "username": "uupvmapcw7xdacfk",
+            "password": "gQuxE2Ug9klrbebD0dmr"
         }
     ]
 }

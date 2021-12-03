@@ -18,7 +18,8 @@
         
         $resultadoSuma = mysqli_query($db, $consultaTotal);
         $suma = mysqli_fetch_assoc($resultadoSuma);
-        $total = $suma['subtotal'] + ($suma['subtotal'] * 0.16); 
+        $total = $suma['subtotal'] + ($suma['subtotal'] * 0.16);
+        $total = round($total, 2); 
         $cuentaProductos = $suma['cuentaProuctos']-1;
     }
 

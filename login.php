@@ -38,7 +38,7 @@
                     $_SESSION['rol'] = $usuario['administrador'];
                     $_SESSION['id'] = $usuario['id'];
                     $_SESSION['login'] = true;
-                    $_SESSION['nombre'] = $usuario['nombre'];
+                    $_SESSION['nombre'] = $usuario['nombreUsuario'];
                     header('Location: /');
 
                 }
