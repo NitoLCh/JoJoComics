@@ -100,7 +100,7 @@
                         //element.innerHTML = '';
                         //element.innerHTML = 'actura.php';
                         // Or go to another URL:  actions.redirect('thank_you.html');
-                        actions.redirect('http://localhost:3000/factura.php');                        
+                        actions.redirect('https://jojocomics.herokuapp.com/factura.php');                        
                     });
                     },
 
