@@ -23,6 +23,21 @@
         $cuentaProductos = $suma['cuentaProuctos']-1;
     }
 
+   /* var_dump($_POST);
+    
+    if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
+        $id_carrito = $_POST['id_carrrito'];
+        $id_carrito = filter_var($id_carrito, FILTER_VALIDATE_INT);
+
+        if($id_carrito){
+            $eliminarCarrito = " DELETE FROM carritoProducto WHERE id_carrito = ${id_carrito} ";
+            $resultadoElim = mysqli_query($db, $eliminarCarrito);
+            if($resultadoElim){
+                header('Location: /index.php');
+            }
+        }
+    }*/
+
     require 'includes/funciones.php';
     incluirTemplate('header');
 ?>
@@ -51,7 +66,6 @@
         </div>
         <div class="carrito__total">
             <h3 class="carrito__subtotal">Total: $<?php echo $total; ?> MXN</h3>
-            
             <div id="smart-button-container">
                 <div style="text-align: center;">
                     <div id="paypal-button-container"></div>
@@ -84,11 +98,9 @@
                         // Show a success message within this page, e.g.
                         const element = document.getElementById('paypal-button-container');
                         //element.innerHTML = '';
-                        //element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
+                        //element.innerHTML = 'actura.php';
                         // Or go to another URL:  actions.redirect('thank_you.html');
-                        actions.redirect('http://localhost:3000/factura.html');
-                        
+                        actions.redirect('http://localhost:3000/factura.php');                        
                     });
                     },
 

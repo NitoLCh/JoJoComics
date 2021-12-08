@@ -81,7 +81,7 @@
                 <?php endwhile; ?>
 
                 <div class="carrito__total">
-                    <h3 class="carrito__subtotal">Subtotal: $<?php echo $subtotal; ?> USD</h3>
+                    <h2 class="carrito__subtotal">Subtotal: $<?php echo $subtotal; ?> MXN</h2>
                     <a href="/check-out.php?id=<?php echo $id_carrito; ?>" class="boton">Proceder al Pago</a>
                 </div>
                         

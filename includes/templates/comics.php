@@ -9,7 +9,6 @@
 
     //LEER LOS RESULTADOS
     $resultado = mysqli_query($db, $query);
-
 ?>
 
 <div class="grid">

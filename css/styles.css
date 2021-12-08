@@ -551,15 +551,14 @@ h3{
 
 .carrito__subtotal{
     text-align: right;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
 .carrito__total{
     display: flex;
     align-items: flex-end;
-    gap: 4rem;
-    grid-column: 2;
+    gap: 2rem;
 }
 
 .carrito__vacio{
