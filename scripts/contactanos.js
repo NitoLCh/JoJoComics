@@ -37,80 +37,80 @@ const validarCampo = (evento) => {
     switch(evento.target.id){
         case "nombre":
             if(expresiones.regex1.test(datos.nombre)){
-                document.querySelector('#nombre').classList.remove('campo_error');//Clase CSS de error
-                document.querySelector('#nombre').classList.add('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#nombre').classList.remove('alerta', 'error');//Clase CSS de error
+                document.querySelector('#nombre').classList.add('alerta', 'exito');//Clase CSS de correcto
             }
             else{
-                document.querySelector('#nombre').classList.add('campo_error');//Clase CSS de error
-                document.querySelector('#nombre').classList.remove('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#nombre').classList.add('alerta', 'error');//Clase CSS de error
+                document.querySelector('#nombre').classList.remove('alerta', 'exito');//Clase CSS de correcto
 
                 //Volver a las propiedades originales en 3 seg
                 setTimeout(() =>{
-                    document.querySelector('#nombre').classList.remove('campo_error');//Clase CSS de error
+                    document.querySelector('#nombre').classList.remove('alerta', 'exito');//Clase CSS de exito
                     document.querySelector('#nombre').classList.add('formulario__campo');//Clase CSS de correcto
                 }, 3000)
             }
         break;
         case "correo":
             if(expresiones.regex3.test(datos.correo)){
-                document.querySelector('#correo').classList.remove('campo_error');//Clase CSS de error
-                document.querySelector('#correo').classList.add('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#correo').classList.remove('alerta', 'error');//Clase CSS de error
+                document.querySelector('#correo').classList.add('alerta', 'exito');//Clase CSS de correcto
             }
             else{
-                document.querySelector('#correo').classList.add('campo_error');//Clase CSS de error
-                document.querySelector('#correo').classList.remove('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#correo').classList.add('alerta', 'error');//Clase CSS de error
+                document.querySelector('#correo').classList.remove('alerta', 'exito');//Clase CSS de correcto
 
                 //Volver a las propiedades originales en 3 seg
                 setTimeout(() =>{
-                    document.querySelector('#correo').classList.remove('campo_error');//Clase CSS de error
+                    document.querySelector('#correo').classList.remove('alerta', 'exito');//Clase CSS de error
                     document.querySelector('#correo').classList.add('formulario__campo');//Clase CSS de correcto
                 }, 3000)
             }
         break;
         case "comic":
             if(expresiones.regex2.test(datos.comic)){
-                document.querySelector('#comic').classList.remove('campo_error');//Clase CSS de error
-                document.querySelector('#comic').classList.add('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#comic').classList.remove('alerta', 'error');//Clase CSS de error
+                document.querySelector('#comic').classList.add('alerta', 'exito');//Clase CSS de correcto
             }
             else{
-                document.querySelector('#comic').classList.add('campo_error');//Clase CSS de error
-                document.querySelector('#comic').classList.remove('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#comic').classList.add('alerta', 'error');//Clase CSS de error
+                document.querySelector('#comic').classList.remove('alerta', 'exito');//Clase CSS de correcto
 
                 //Volver a las propiedades originales en 3 seg
                 setTimeout(() =>{
-                    document.querySelector('#comic').classList.remove('campo_error');//Clase CSS de error
+                    document.querySelector('#comic').classList.remove('alerta', 'exito');//Clase CSS de error
                     document.querySelector('#comic').classList.add('formulario__campo');//Clase CSS de correcto
                 }, 3000)
             }
         break;
         case "editorial":
             if(expresiones.regex1.test(datos.editorial)){
-                document.querySelector('#editorial').classList.remove('campo_error');//Clase CSS de error
-                document.querySelector('#editorial').classList.add('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#editorial').classList.remove('alerta', 'error');//Clase CSS de error
+                document.querySelector('#editorial').classList.add('alerta', 'exito');//Clase CSS de correcto
             }
             else{
-                document.querySelector('#editorial').classList.add('campo_error');//Clase CSS de error
-                document.querySelector('#editorial').classList.remove('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#editorial').classList.add('alerta', 'error');//Clase CSS de error
+                document.querySelector('#editorial').classList.remove('alerta', 'exito');//Clase CSS de correcto
 
                 //Volver a las propiedades originales en 3 seg
                 setTimeout(() =>{
-                    document.querySelector('#editorial').classList.remove('campo_error');//Clase CSS de error
+                    document.querySelector('#editorial').classList.remove('alerta', 'exito');//Clase CSS de error
                     document.querySelector('#editorial').classList.add('formulario__campo');//Clase CSS de correcto
                 }, 3000)
             }
         break;
         case "año":
             if(expresiones.regex4.test(datos.año)){
-                document.querySelector('#año').classList.remove('campo_error');//Clase CSS de error
-                document.querySelector('#año').classList.add('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#año').classList.remove('alerta', 'error');//Clase CSS de error
+                document.querySelector('#año').classList.add('alerta', 'exito');//Clase CSS de correcto
             }
             else{
-                document.querySelector('#año').classList.add('campo_error');//Clase CSS de error
-                document.querySelector('#año').classList.remove('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#año').classList.add('alerta', 'error');//Clase CSS de error
+                document.querySelector('#año').classList.remove('alerta', 'exito');//Clase CSS de correcto
 
                 //Volver a las propiedades originales en 3 seg
                 setTimeout(() =>{
-                    document.querySelector('#año').classList.remove('campo_error');//Clase CSS de error
+                    document.querySelector('#año').classList.remove('alerta', 'exito');//Clase CSS de error
                     document.querySelector('#año').classList.add('formulario__campo');//Clase CSS de correcto
                 }, 3000)
             }
@@ -157,7 +157,7 @@ function mostrarAlerta(mensaje, tipo = null){
         alerta.classList.add('error');
     }
     else{
-        alerta.classList.add('correcto');
+        alerta.classList.add('exito');
     }
 
     formulario.appendChild(alerta);
