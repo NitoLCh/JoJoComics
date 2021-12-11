@@ -71,10 +71,10 @@
                 <legend>Email y Constraseña</legend>
 
                 <label for="email">E-mail</label>
-                <input class="formulario__campo" type="email" id="email" name="email" placeholder="Tu correo" required> 
+                <input class="formulario__campo" type="email" id="email" name="email" placeholder="Tu correo" > 
 
                 <label for="contraseña">Contraseña</label>
-                <input class="formulario__campo" type="password" name="contraseña" placeholder="Contraseña" required>
+                <input class="formulario__campo" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" >
 
                 <a class="link" href="/registro.php">¿No tienes una cuenta? Registrate</a>
 
@@ -84,6 +84,8 @@
             </fieldset>
         </form>
     </main>
+
+    <script src="scripts/login.js"></script>
 
     <?php 
         incluirTemplate('footer');

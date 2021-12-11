@@ -21,7 +21,7 @@ correo.addEventListener('input', obtenerId);
 contraseña.addEventListener('input', obtenerId);
 
 //Submit
-formulario.addEventListener('submit', function(evento){
+/*formulario.addEventListener('submit', function(evento){
     evento.preventDefault();
 
     //Validacion de formulario
@@ -34,39 +34,39 @@ formulario.addEventListener('submit', function(evento){
     else{
         mostrarAlerta('campos llenos');
     }
-});
+});*/
 
 //Validacion de campos
 const validarCampo = (evento) => {
     switch(evento.target.id){
         case "email":
             if(expresiones.correo.test(datos.email)){
-                document.querySelector('#email').classList.remove('campo_error');//Clase CSS de error
-                document.querySelector('#email').classList.add('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#email').classList.remove('alerta', 'error');//Clase CSS de error
+                document.querySelector('#email').classList.add('alerta', 'exito');//Clase CSS de correcto
             }
             else{
-                document.querySelector('#email').classList.add('campo_error');//Clase CSS de error
-                document.querySelector('#email').classList.remove('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#email').classList.add('alerta', 'error');//Clase CSS de error
+                document.querySelector('#email').classList.remove('alerta', 'exito');//Clase CSS de correcto
 
                 //Volver a las propiedades originales en 3 seg
                 setTimeout(() =>{
-                    document.querySelector('#email').classList.remove('campo_error');//Clase CSS de error
+                    document.querySelector('#email').classList.remove('alerta', 'exito');//Clase CSS de error
                     document.querySelector('#email').classList.add('formulario__campo');//Clase CSS de correcto
                 }, 3000)
             } 
         break;
         case "contraseña":
             if(expresiones.contraseña.test(datos.contraseña)){
-                document.querySelector('#contraseña').classList.remove('campo_error');//Clase CSS de error
-                document.querySelector('#contraseña').classList.add('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#contraseña').classList.remove('alerta', 'error');//Clase CSS de error
+                document.querySelector('#contraseña').classList.add('alerta', 'exito');//Clase CSS de correcto
             }
             else{
-                document.querySelector('#contraseña').classList.add('campo_error');//Clase CSS de error
-                document.querySelector('#contraseña').classList.remove('campo__correcto');//Clase CSS de correcto
+                document.querySelector('#contraseña').classList.add('alerta', 'error');//Clase CSS de error
+                document.querySelector('#contraseña').classList.remove('alerta', 'exito');//Clase CSS de correcto
 
                 //Volver a las propiedades originales en 3 seg
                 setTimeout(() =>{
-                    document.querySelector('#contraseña').classList.remove('campo_error');//Clase CSS de error
+                    document.querySelector('#contraseña').classList.remove('alerta', 'exito');//Clase CSS de error
                     document.querySelector('#contraseña').classList.add('formulario__campo');//Clase CSS de correcto
                 }, 3000)
             } 
@@ -85,7 +85,7 @@ function obtenerId(evento){
 }
 
 //Campos vacios
-function mostrarAlerta(mensaje, tipo = null){
+/*function mostrarAlerta(mensaje, tipo = null){
     const alerta = document.createElement('P');
     alerta.textContent = mensaje;
 
@@ -94,7 +94,7 @@ function mostrarAlerta(mensaje, tipo = null){
         alerta.classList.add('error');
     }
     else{
-        alerta.classList.add('correcto');
+        alerta.classList.add('exito');
     }
 
     formulario.appendChild(alerta);
@@ -103,4 +103,4 @@ function mostrarAlerta(mensaje, tipo = null){
     setTimeout(() =>{
         alerta.remove();
     }, 3000)
-}
+}*/
