@@ -574,3 +574,13 @@ h3{
     align-self: start;
     
 }
+
+.slider li{
+    display: flex;
+    justify-content: center;
+}
+
+.slider__img{
+    width: 150rem;
+    height: 40rem;
+}
