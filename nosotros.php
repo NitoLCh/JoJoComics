@@ -14,10 +14,10 @@
                 </p>
                 
                 <p>
-                    Jorge Alejandro Ledesma Chavez<br><br>
-                    19130930 <br><br>
-                    Jose Eduardo Espino Ramirez <br><br>
-                    19130905
+                    Juan Francisco Barragán Barrón<br><br>
+                    19130891 <br><br>
+                    Javier Arath De la Cerda Martínez<br><br>
+                    19130900
                 </p>
             </div>
             <img class="nosotros__imagen" src="img/nosotros.jpg" alt="imagen nosotros">
